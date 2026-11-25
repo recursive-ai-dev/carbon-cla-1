@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{page_title}}</title>
+  <style>:root{--bg:#0b0f17;--panel:#131a26;--line:#233044;--txt:#e6edf7;--muted:#8fa3bf;--accent:#38bdf8;--pill:#1b283d}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}.wrap{max-width:1040px;margin:0 auto;padding:2rem 1.25rem}nav.bar{display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.25rem;border-bottom:1px solid var(--line);background:var(--panel)}nav.bar ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}nav.bar a{color:var(--muted);text-decoration:none;font-size:.92rem}header.hero{padding:2.25rem 0 1.5rem;border-bottom:1px solid var(--line);margin-bottom:1.75rem}header.hero h1{margin:0 0 .5rem;font-size:2rem;letter-spacing:-.02em}header.hero p{margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.25rem 0}.card,.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.1rem}.stat .val{font-size:1.65rem;font-weight:700;color:var(--accent);margin:.25rem 0}.muted{color:var(--muted);font-size:.86rem}table.data{width:100%;border-collapse:collapse;margin:1.25rem 0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}table.data th,table.data td{padding:.7rem .9rem;text-align:left;border-bottom:1px solid var(--line)}table.data th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}ul.clean{list-style:none;padding:0;margin:1rem 0}ul.clean li{padding:.6rem .85rem;border-bottom:1px solid var(--line)}.pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}.pill{background:var(--pill);color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:.15rem .6rem;font-size:.76rem}footer.foot{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}</style>
+</head>
+<body>
+<nav class="bar">
+  <strong>{{brand}}</strong>
+  <ul>
+  {@for link in links}
+    <li><a href="{{link.href}}">{{link.label}}</a></li>
+  {@end}
+  </ul>
+</nav>
+<main class="wrap">
+<header class="hero">
+  <h1>{{headline}}</h1>
+  {@if subheadline}<p>{{subheadline}}</p>{@end}
+</header>
+<section class="grid">
+{@for kpi in kpis}
+  <div class="stat">
+    <div class="muted">{{kpi.label}}</div>
+    <div class="val">{{kpi.value}}</div>
+    {@if kpi.note}<div class="muted">{{kpi.note}}</div>{@end}
+  </div>
+{@end}
+</section>
+<section class="grid">
+{@for component in components}
+  <article class="card">
+    <h3>{{component.name}}</h3>
+    <p>{{component.role}}</p>
+    <div class="pills">
+    {@for primitive in component.primitives}
+      <span class="pill">{{primitive}}</span>
+    {@end}
+    </div>
+  </article>
+{@end}
+</section>
+<table class="data">
+  <thead>
+    <tr>
+      <th>Step</th><th>Pc</th><th>Opcode</th><th>Loops</th><th>Depth</th><th>Attn Peaks</th><th>Gates</th><th>Emitted</th>
+    </tr>
+  </thead>
+  <tbody>
+  {@for trace_row in trace_rows}
+    <tr>
+      <td>{{trace_row.step}}</td><td>{{trace_row.pc}}</td><td>{{trace_row.opcode}}</td><td>{{trace_row.loops}}</td><td>{{trace_row.depth}}</td><td>{{trace_row.attn_peaks}}</td><td>{{trace_row.gates}}</td><td>{{trace_row.emitted}}</td>
+    </tr>
+  {@end}
+  </tbody>
+</table>
+<footer class="foot">
+  <p>{{footer_note}}</p>
+</footer>
+</main></body></html>

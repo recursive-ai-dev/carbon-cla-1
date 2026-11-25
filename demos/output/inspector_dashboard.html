@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carbon CLA-1 — Non-LLM Looped-Attention HTML Engine</title>
+  <style>:root{--bg:#0b0f17;--panel:#131a26;--line:#233044;--txt:#e6edf7;--muted:#8fa3bf;--accent:#38bdf8;--pill:#1b283d}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}.wrap{max-width:1040px;margin:0 auto;padding:2rem 1.25rem}nav.bar{display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.25rem;border-bottom:1px solid var(--line);background:var(--panel)}nav.bar ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}nav.bar a{color:var(--muted);text-decoration:none;font-size:.92rem}header.hero{padding:2.25rem 0 1.5rem;border-bottom:1px solid var(--line);margin-bottom:1.75rem}header.hero h1{margin:0 0 .5rem;font-size:2rem;letter-spacing:-.02em}header.hero p{margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.25rem 0}.card,.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.1rem}.stat .val{font-size:1.65rem;font-weight:700;color:var(--accent);margin:.25rem 0}.muted{color:var(--muted);font-size:.86rem}table.data{width:100%;border-collapse:collapse;margin:1.25rem 0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}table.data th,table.data td{padding:.7rem .9rem;text-align:left;border-bottom:1px solid var(--line)}table.data th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}ul.clean{list-style:none;padding:0;margin:1rem 0}ul.clean li{padding:.6rem .85rem;border-bottom:1px solid var(--line)}.pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}.pill{background:var(--pill);color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:.15rem .6rem;font-size:.76rem}footer.foot{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}</style>
+</head>
+<body>
+<nav class="bar">
+  <strong>CARBON // CLA-1</strong>
+  <ul>
+  
+    <li><a href="#kpis">Footprint</a></li>
+  
+    <li><a href="#components">LLM Primitives</a></li>
+  
+    <li><a href="#trace">Tensor Trace</a></li>
+  
+  </ul>
+</nav>
+<main class="wrap">
+<header class="hero">
+  <h1>Sub-Kilobyte Looped-Attention HTML Engine</h1>
+  <p>Not an LLM — zero text training, zero hallucinations. 100% built from RoPE, ALiBi, QK-RMSNorm, KV-Cache, Attention Sinks, and SwiGLU.</p>
+</header>
+<section class="grid">
+
+  <div class="stat">
+    <div class="muted">Active Nonzero Weights</div>
+    <div class="val">303</div>
+    <div class="muted">852 bytes sparse fp16</div>
+  </div>
+
+  <div class="stat">
+    <div class="muted">Residual Width (d_model)</div>
+    <div class="val">32 floats</div>
+    <div class="muted">SwiGLU d_ff = 49</div>
+  </div>
+
+  <div class="stat">
+    <div class="muted">Template Meta-Synth Steps</div>
+    <div class="val">329</div>
+    <div class="muted">Engine synthesized its own template!</div>
+  </div>
+
+  <div class="stat">
+    <div class="muted">Dashboard Render Steps</div>
+    <div class="val">Live</div>
+    <div class="muted">54 probe trace rows looped</div>
+  </div>
+
+</section>
+<section class="grid">
+
+  <article class="card">
+    <h3>Head 0: Instruction Fetch</h3>
+    <p>Queries Template KV-Cache at Program Counter via 3-frequency RoPE + QK-RMSNorm.</p>
+    <div class="pills">
+    
+      <span class="pill">RoPE</span>
+    
+      <span class="pill">QK-RMSNorm</span>
+    
+      <span class="pill">SDPA</span>
+    
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>Head 1: Tuple Data &amp; Sink</h3>
+    <p>Indexes 3D nested loop scopes in Data KV-Cache; Null Attention Sink catches loop exits.</p>
+    <div class="pills">
+    
+      <span class="pill">Tuple-RoPE</span>
+    
+      <span class="pill">Attention-Sink</span>
+    
+      <span class="pill">KV-Cache</span>
+    
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>Head 2: LIFO Tag Stack</h3>
+    <p>Matches open HTML tag depth via RoPE and resolves most recent tag via ALiBi recency.</p>
+    <div class="pills">
+    
+      <span class="pill">ALiBi</span>
+    
+      <span class="pill">RoPE</span>
+    
+      <span class="pill">Dynamic-KV</span>
+    
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>SwiGLU Control FFN</h3>
+    <p>Bias-free Llama FFN executing exact boolean AND gates, loop jumps, and counter resets.</p>
+    <div class="pills">
+    
+      <span class="pill">SwiGLU</span>
+    
+      <span class="pill">SiLU</span>
+    
+      <span class="pill">Residual-Stream</span>
+    
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>Archetype Router</h3>
+    <p>Maps fuzzy blueprint intents to HTML archetypes via Subword 3-gram Embeddings + SDPA.</p>
+    <div class="pills">
+    
+      <span class="pill">Subword-NGram</span>
+    
+      <span class="pill">RMSNorm</span>
+    
+      <span class="pill">Cross-Attention</span>
+    
+    </div>
+  </article>
+
+</section>
+<table class="data">
+  <thead>
+    <tr>
+      <th>Step</th><th>Pc</th><th>Opcode</th><th>Loops</th><th>Depth</th><th>Attn Peaks</th><th>Gates</th><th>Emitted</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>0</td><td>0</td><td>LIT</td><td>(0, 0, 0)</td><td>0</td><td>I:1.000 D:SINK S:1.000</td><td>4</td><td>&lt;section&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>1</td><td>1</td><td>LIT</td><td>(0, 0, 0)</td><td>1</td><td>I:1.000 D:SINK S:1.000</td><td>4</td><td>&lt;h2&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>2</td><td>2</td><td>VAR</td><td>(0, 0, 0)</td><td>2</td><td>I:1.000 D:1.000 S:1.000</td><td>2</td><td>Tensor Loop Probe</td>
+    </tr>
+  
+    <tr>
+      <td>3</td><td>3</td><td>LIT</td><td>(0, 0, 0)</td><td>2</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>&lt;/h2&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>4</td><td>4</td><td>LIT</td><td>(0, 0, 0)</td><td>1</td><td>I:1.000 D:SINK S:1.000</td><td>4</td><td>&lt;ul&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>5</td><td>5</td><td>FOR</td><td>(0, 0, 0)</td><td>2</td><td>I:1.000 D:1.000 S:1.000</td><td>1</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>6</td><td>6</td><td>LIT</td><td>(0, 0, 0)</td><td>2</td><td>I:1.000 D:SINK S:1.000</td><td>4</td><td>&lt;li&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>7</td><td>7</td><td>LIT</td><td>(0, 0, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>4</td><td>&lt;b&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>8</td><td>8</td><td>VAR</td><td>(0, 0, 0)</td><td>4</td><td>I:1.000 D:1.000 S:1.000</td><td>2</td><td>Attention</td>
+    </tr>
+  
+    <tr>
+      <td>9</td><td>9</td><td>LIT</td><td>(0, 0, 0)</td><td>4</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>&lt;/b&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>10</td><td>10</td><td>LIT</td><td>(0, 0, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>: </td>
+    </tr>
+  
+    <tr>
+      <td>11</td><td>11</td><td>FOR</td><td>(0, 0, 0)</td><td>3</td><td>I:1.000 D:1.000 S:1.000</td><td>1</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>12</td><td>12</td><td>LIT</td><td>(0, 0, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>4</td><td>&lt;span&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>13</td><td>13</td><td>VAR</td><td>(0, 0, 0)</td><td>4</td><td>I:1.000 D:1.000 S:1.000</td><td>2</td><td>RoPE</td>
+    </tr>
+  
+    <tr>
+      <td>14</td><td>14</td><td>IF</td><td>(0, 0, 0)</td><td>4</td><td>I:1.000 D:1.000 S:1.000</td><td>1</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>15</td><td>15</td><td>LIT</td><td>(0, 0, 0)</td><td>4</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>, </td>
+    </tr>
+  
+    <tr>
+      <td>16</td><td>16</td><td>CLOSE</td><td>(0, 0, 0)</td><td>4</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>&lt;/span&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>17</td><td>17</td><td>NEXT</td><td>(0, 0, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>2</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>18</td><td>11</td><td>FOR</td><td>(0, 1, 0)</td><td>3</td><td>I:1.000 D:1.000 S:1.000</td><td>1</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>19</td><td>12</td><td>LIT</td><td>(0, 1, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>4</td><td>&lt;span&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>20</td><td>13</td><td>VAR</td><td>(0, 1, 0)</td><td>4</td><td>I:1.000 D:1.000 S:1.000</td><td>2</td><td>ALiBi</td>
+    </tr>
+  
+    <tr>
+      <td>21</td><td>14</td><td>IF</td><td>(0, 1, 0)</td><td>4</td><td>I:1.000 D:1.000 S:1.000</td><td>1</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>22</td><td>15</td><td>LIT</td><td>(0, 1, 0)</td><td>4</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>, </td>
+    </tr>
+  
+    <tr>
+      <td>23</td><td>16</td><td>CLOSE</td><td>(0, 1, 0)</td><td>4</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>&lt;/span&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>24</td><td>17</td><td>NEXT</td><td>(0, 1, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>2</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>25</td><td>11</td><td>FOR</td><td>(0, 2, 0)</td><td>3</td><td>I:1.000 D:1.000 S:1.000</td><td>1</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>26</td><td>12</td><td>LIT</td><td>(0, 2, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>4</td><td>&lt;span&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>27</td><td>13</td><td>VAR</td><td>(0, 2, 0)</td><td>4</td><td>I:1.000 D:1.000 S:1.000</td><td>2</td><td>QK-RMSNorm</td>
+    </tr>
+  
+    <tr>
+      <td>28</td><td>14</td><td>IF</td><td>(0, 2, 0)</td><td>4</td><td>I:1.000 D:1.000 S:1.000</td><td>1</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>29</td><td>16</td><td>CLOSE</td><td>(0, 2, 0)</td><td>4</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>&lt;/span&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>30</td><td>17</td><td>NEXT</td><td>(0, 2, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>2</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>31</td><td>11</td><td>FOR</td><td>(0, 3, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>2</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>32</td><td>18</td><td>CLOSE</td><td>(0, 0, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>&lt;/li&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>33</td><td>19</td><td>NEXT</td><td>(0, 0, 0)</td><td>2</td><td>I:1.000 D:SINK S:1.000</td><td>2</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>34</td><td>5</td><td>FOR</td><td>(1, 0, 0)</td><td>2</td><td>I:1.000 D:1.000 S:1.000</td><td>1</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>35</td><td>6</td><td>LIT</td><td>(1, 0, 0)</td><td>2</td><td>I:1.000 D:SINK S:1.000</td><td>4</td><td>&lt;li&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>36</td><td>7</td><td>LIT</td><td>(1, 0, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>4</td><td>&lt;b&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>37</td><td>8</td><td>VAR</td><td>(1, 0, 0)</td><td>4</td><td>I:1.000 D:1.000 S:1.000</td><td>2</td><td>FFN</td>
+    </tr>
+  
+    <tr>
+      <td>38</td><td>9</td><td>LIT</td><td>(1, 0, 0)</td><td>4</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>&lt;/b&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>39</td><td>10</td><td>LIT</td><td>(1, 0, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>: </td>
+    </tr>
+  
+    <tr>
+      <td>40</td><td>11</td><td>FOR</td><td>(1, 0, 0)</td><td>3</td><td>I:1.000 D:1.000 S:1.000</td><td>1</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>41</td><td>12</td><td>LIT</td><td>(1, 0, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>4</td><td>&lt;span&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>42</td><td>13</td><td>VAR</td><td>(1, 0, 0)</td><td>4</td><td>I:1.000 D:1.000 S:1.000</td><td>2</td><td>SwiGLU</td>
+    </tr>
+  
+    <tr>
+      <td>43</td><td>14</td><td>IF</td><td>(1, 0, 0)</td><td>4</td><td>I:1.000 D:1.000 S:1.000</td><td>1</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>44</td><td>16</td><td>CLOSE</td><td>(1, 0, 0)</td><td>4</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>&lt;/span&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>45</td><td>17</td><td>NEXT</td><td>(1, 0, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>2</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>46</td><td>11</td><td>FOR</td><td>(1, 1, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>2</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>47</td><td>18</td><td>CLOSE</td><td>(1, 0, 0)</td><td>3</td><td>I:1.000 D:SINK S:1.000</td><td>3</td><td>&lt;/li&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>48</td><td>19</td><td>NEXT</td><td>(1, 0, 0)</td><td>2</td><td>I:1.000 D:SINK S:1.000</td><td>2</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>49</td><td>5</td><td>FOR</td><td>(2, 0, 0)</td><td>2</td><td>I:1.000 D:SINK S:1.000</td><td>2</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>50</td><td>20</td><td>CLOSE</td><td>(0, 0, 0)</td><td>2</td><td>I:1.000 D:SINK S:1.000</td><td>2</td><td>&lt;/ul&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>51</td><td>20</td><td>CLOSE</td><td>(0, 0, 0)</td><td>1</td><td>I:1.000 D:SINK S:1.000</td><td>2</td><td>&lt;/section&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>52</td><td>20</td><td>CLOSE</td><td>(0, 0, 0)</td><td>0</td><td>I:1.000 D:SINK S:1.000</td><td>1</td><td>&lt;NOP&gt;</td>
+    </tr>
+  
+    <tr>
+      <td>53</td><td>21</td><td>HALT</td><td>(0, 0, 0)</td><td>0</td><td>I:1.000 D:SINK S:1.000</td><td>1</td><td>&lt;EOS&gt;</td>
+    </tr>
+  
+  </tbody>
+</table>
+<footer class="foot">
+  <p>Synthesized &amp; loop-rendered deterministically by Carbon CLA-1 (303 nonzero weights, 5818 dense params).</p>
+</footer>
+</main></body></html>
